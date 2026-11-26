@@ -1,6 +1,6 @@
 # CLAUDE.md — Übergabe für Drift (und den Orion-Prototyp)
 
-Stand: Drift **v097k** (`index.html` im Repo `krummholzworks/drift`), Orion-Prototyp **orion-prototype-v011.html** mit neuem Kampf-Layer (siehe 3.3; liegt **nicht** im Repo).
+Stand: Drift **v097k** (`index.html` im Repo `krummholzworks/drift`), Orion-Prototyp `orion-prototype-v011.html` im Repo (**ohne** Kampf-Layer; die Kampf-Fassung aus 3.3 fehlt noch, siehe Abschnitt 2).
 Diese Datei ersetzt den Chat-Verlauf. Wo etwas **nicht verifiziert** ist, steht es ausdrücklich dabei — lieber nachprüfen als glauben.
 
 ---
@@ -31,20 +31,22 @@ Jans übergreifende Idee hinter allen seinen Spielen (Drift, Robinson-Spiel, Ana
 
 ## 2. Dateien und Struktur
 
-| Datei | Was |
-|---|---|
 **Im Repo:**
 
 | Datei | Was |
 |---|---|
 | `index.html` | **Aktueller Stand von Drift** (≈6.700 Zeilen, ≈370 KB). Einzige Datei, die ausgeliefert wird (GitHub Pages). Version steht im `<title>` und als Git-Tag. |
+| `orion-prototype-v011.html` | Orion-Prototyp, **reiner Darstellungsstand ohne Kampf-Layer** (Sternbild, Routen, Barnard's Loop, Schwarzes Loch, E3-Objektreihe, Tap-to-fly über den rechten Weg). Code-Kommentare Deutsch. Siehe Hinweis unten. |
 | `CLAUDE.md` | Diese Übergabe. |
+| `README.md` | Kurzbeschreibung. |
+
+**Achtung, zwei verschiedene „v011":** Die im Repo liegende `orion-prototype-v011.html` enthält **nichts** von dem in 3.3 beschriebenen Kampf-Layer (kein `nodeState`, `FORMATIONS`, `COMBAT_TICK_MS`, `collapseFront`, `EFFECTIVENESS`, `PILE_FILL_RATE`). Da der Kampf-Layer ohne Hochzählen der Version eingebaut wurde, existiert die Kampf-Fassung nur außerhalb des Repos. Sobald sie auftaucht, als **`orion-prototype-v012.html`** einchecken.
 
 **Nur außerhalb des Repos (bei Jan bzw. im früheren Chat), hier nicht prüfbar:**
 
 | Datei | Was |
 |---|---|
-| `orion-prototype-v011.html` | Eigenständiger Orion-Prototyp, jetzt **mit Kampf-Layer** (siehe 3.3). Ältere Stände v001–v010 existieren. |
+| Orion **mit Kampf-Layer** (intern ebenfalls „v011") | Siehe 3.3. Fehlt im Repo, einzuchecken als v012. Ältere Stände v001–v010 existieren. |
 | `Drift_Statuspapier_v090.rtf`, `Drift_Lernpapier_v090.rtf` | Ausführliche Doku **Stand v090** (Tabellen, Glossar, JS-Auffrischung für Wiedereinsteiger). Veraltet bei Rezeptnummern und Kosten (siehe unten), sonst gute Orientierung. |
 | `cat-prototype-v001.html`, `starship-flythrough.html` | Nebenprototypen (Katzen-Animation, „Dreadnought Flythrough"). Nicht in Drift integriert, kein Integrationsplan bekannt. |
 | `outputs/drift-prototype-v084 … v097j.html` | Alte Einzeldateien aus der Sandbox-Zeit. Ab v097j übernimmt die Git-Historie diese Rolle. |
@@ -268,7 +270,7 @@ Metaballs für Wölkchen, Spawner/Attraktor als direkt editierbare Objekte, Neuk
 ### Versionierung
 
 1. Drift liegt immer als **`index.html`** im Repo. Pro Runde: Version im `<title>` hochzählen (`Drift — Prototype v097<Buchstabe>`, zuletzt **v097k**, nächste **v097l**), committen, Git-Tag mit derselben Versionsnummer setzen (`v097k`). Alte Stände holt man aus der Git-Historie bzw. über den Tag, nicht über Dateikopien. Die Basisnummer bleibt vorerst bei v097.
-2. Orion: `orion-prototype-vNNN.html`, fortlaufend dreistellig (nächste: **v012**).
+2. Orion: `orion-prototype-vNNN.html`, fortlaufend dreistellig. **v012** ist für die Kampf-Fassung reserviert (siehe Abschnitt 2); die nächste neue Änderung wird **v013**.
 3. Pro Runde eine kurze **nummerierte** Zusammenfassung dessen, was geändert wurde und warum.
 
 ### Code-Konventionen
